@@ -91,7 +91,7 @@ export default {
                             port: database.port,
                             dialect: 'postgres'
                         }), // sequelize instance
-                        sync: false, // sync models - default false
+                        sync: true, // sync models - default false
                         forceSync: false, // force sync (drops tables) - default false
                     }
                 ]
@@ -142,66 +142,6 @@ export default {
             }
         },
         {
-            plugin: "./modules/act_common",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/act_user",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/act_plant",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/act_news",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/act_exam",
-            options: {
-                "select": "api"
-            }
-        },
-        // {
-        //     plugin: "./modules/act_vote",
-        //     options: {
-        //         "select": "api"
-        //     }
-        // },
-        {
-            plugin: "./modules/act_review",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/act_checkin",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/dxy",
-            options: {
-                "select": "api"
-            }
-        },
-        {
-            plugin: "./modules/act_daily_question",
-            options: {
-                "select": "api"
-            }
-        },
-        {
             plugin: {
                 register: './auth/hapi-auth-mext',
                 options: {}
@@ -223,19 +163,13 @@ export default {
             }
         },
         {
-            plugin: "./modules/act_survey",
-            options: {
-                "select": "api"
-            }
-        },
-        {
             plugin: "./modules/upload",
             options: {
                 "select": "api"
             }
         },
         {
-            plugin: "./modules/act_feedback",
+            plugin: "./modules/customers",
             options: {
                 "select": "api"
             }
