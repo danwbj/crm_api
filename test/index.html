@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>TEST</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="http://klzcdn.b0.upaiyun.com/baleina/app_vkwap/common/zepto.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //       分享到朋友圈
+            window.wxtitle = "";
+            window.wxdesc = "";
+            window.wxlink = window.location.href;
+            window.wximgUrl = "";
+            var share_cheng = '国家大剧院携手清华大学送学子大礼';
+            var cheng = undefined;
+            var share_src = 'http://klzcdn.b0.upaiyun.com/baleina/app_vkwap/apps/theater-invitation/images/share.png';
+            function onloadFun() {
+                $.post('http://127.0.0.1:8061/wx/jsconfig',
+                    {
+                        url: window.location.href,
+                        client: 'klz'
+                    },
+                    function (json) {
+                        wx.config({
+                            debug: false,
+                            appId: json["appId"],
+                            timestamp: json["timestamp"],
+                            nonceStr: json["nonceStr"],
+                            signature: json["signature"],
+                            jsApiList: [
+                                'checkJsApi',
+                                'onMenuShareTimeline',
+                                'onMenuShareAppMessage'
+                            ]
+                        });
+
+                        wx.ready(function () {
+                            changeWx();
+                        });
+                    }, "json");
+            }
+
+            function changeWx() {
+                wx.onMenuShareAppMessage({
+                    title: '新学年三重好礼',
+                    desc: share_cheng,
+                    link: window.wxlink,
+                    imgUrl: share_src,
+                    trigger: function (res) { },
+                    success: function (res) { },
+                    cancel: function (res) { },
+                    fail: function (res) { }
+                });
+
+                wx.onMenuShareTimeline({
+                    title: '新学年三重好礼:' + share_cheng,
+                    link: window.wxlink,
+                    imgUrl: share_src,
+                    trigger: function (res) { },
+                    success: function (res) { },
+                    cancel: function (res) { },
+                    fail: function (res) { }
+                });
+            }
+            window.addEventListener('load', onloadFun, false);
+        })
+    </script>
+</body>
+
+</html>

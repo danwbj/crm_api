@@ -1,0 +1,36 @@
+{
+  "database": {
+    "dbname": "crm",
+    "host": "localhost",
+    "port": "5432",
+    "username": "crm",
+    "password": "123crm"
+  },
+  "redis": {
+    "host": "118.244.237.2",
+    "port": "6379"
+  },
+  "clients": {
+    "klz": {
+      "appid": "wxbbcc1e52d4abb23c",
+      "secret": "5e6bceaf56c9c0815ca4c03d322e93e7",
+      "token": "xah",
+      "aeskey": "FdrMQLkwuwK4LtC8TXVdplcRFTGJVwTAtpV1rkSB4uw",
+      "wx_redirect_uri": "http://cod.baleina.cn/ucenterauth/oauth_response",
+      "welmsg": "欢迎关注，感谢您的互动参与。"
+    },
+    "motivate": {
+      "appid": "wxf1ccf6eef55a445e",
+      "secret": "7a6cfcb90cd4574bd258ab5ea3eeda2a",
+      "token": "K8CYNjCeeVwVZrjo",
+      "aeskey": "K8CYNjCeeVwVZrjo8bEZ8Ul4VtOsckSgl0AjqRbjP6s",
+      "wx_redirect_uri": "http://cod.baleina.cn/ucenterauth/oauth_response",
+      "welmsg": "欢迎关注motivate中国抑郁焦虑诊疗优化实践项目，感谢您的互动参与。"
+    }
+  },
+  "vhome_uri": "http://vhome.baleina.cn",
+  "wx_redirect_uri": "http://cod.baleina.cn/ucenterauth/oauth_response",
+  "upload": {
+    "path": "uploads"
+  }
+}

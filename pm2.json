@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "script": "./dist/server.js",
+            "name": "cod_api",
+            "interpreter": "node",
+            "env": {
+                "NODE_ENV": "dev"
+            },
+            "out_file": "cod_api.log",
+            "error_file": "cod_api-err.log"
+        }
+    ]
+}

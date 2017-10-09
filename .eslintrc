@@ -1,0 +1,14 @@
+{
+    "rules": {
+        "no-console": 1, //禁止使用console
+        "no-alert": 1, //alert
+        "indent": [
+            1,
+            4
+        ], //缩进风格
+        "quotes": [
+            1,
+            "single"
+        ] //引号类型
+    }
+}
